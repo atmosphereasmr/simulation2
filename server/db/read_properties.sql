@@ -11,5 +11,5 @@ SELECT
   , monthly_amount
   , desired_rent
 FROM properties
-WHERE user_id = ${user_id}
+-- WHERE user_id = ${user_id}
 ;

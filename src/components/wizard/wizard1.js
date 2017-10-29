@@ -18,15 +18,19 @@ class Wizard1 extends Component {
   eventHandlerPropertyName(event) {
     this.setState({
       property_name: event
+    }, () => {
+      this.props.propertyName(this.state.property_name)
+      console.log(this.state.property_name)
     })
-    this.props.propertyName(this.state.property_name)
   }
 
   eventHandlerPropertyDesc(event) {
     this.setState({
       property_desc: event
+    }, () => {
+      this.props.propertyDesc(this.state.property_desc)
+      console.log(this.state.property_desc)
     })
-    this.props.propertyDesc(this.state.property_desc)
   }
 
 componentDidMount() {

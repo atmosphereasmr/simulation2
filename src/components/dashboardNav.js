@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import { Link } from "react-router-dom";
 import {connect} from 'react-redux'
 import {desire} from '../reducers/reducer'
+import House from './houseObject'
+import axios from 'axios'
 
 class DashboardNav extends Component {
 
@@ -10,9 +12,16 @@ class DashboardNav extends Component {
     super()
 
     this.state = {
-      desired_rent: ''
+      desired_rent: '',
+      houses: []
     }
   }
+
+  componentDidMount() {
+    axios.get('http://localhost:3001/api/properties').then( response => {
+        this.setState({houses: response.data})
+      })
+    }
 
   eventHandlerDesired(event) {
     this.setState({
@@ -50,24 +59,7 @@ class DashboardNav extends Component {
             </div>
         </div>
         <div className="thinDivider"/>
-        <div className="houseDisplay">
-          <div className="housePreview">
-           <style>{`.preview{background-image: url(${this.props.image_url})`}</style>
-          </div>
-          <div>
-          <p>Property Name: {this.props.name}</p>
-            <p>Property Description: {this.props.description}</p>
-            <p>Property Address: {this.props.address}</p>
-            <p>Property City: {this.props.city}</p>
-            <p>Property State: {this.props.state}</p>
-            <p>Property ZIP: {this.props.zip}</p>
-          </div>
-          <div>
-            <p>Loan Amount: {this.props.loan_amount}</p>
-            <p>Monthly Amount: {this.props.monthly_amount}</p>
-            <p>Desired Rent: {this.props.desired_rent}</p>
-          </div>
-        </div>
+        <House />
       </div>
     </div>
     )

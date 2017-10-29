@@ -40,8 +40,8 @@ class Wizard5 extends Component {
 
   componentDidMount() {
     this.props.selectPage5()
-}
-
+  }
+  
   render() {
     return (
       <div>

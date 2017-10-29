@@ -35,7 +35,7 @@ module.exports = {
   read: (req, res, next) => {
     const dbInstance = req.app.get('db');
     const { session } = req
-    const user_id = session.user.user_id;
+    const user_id = null;
 
     dbInstance.read_properties({ user_id })
       .then(response => {

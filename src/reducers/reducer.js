@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const initialState = {
   username: '',
   password: '',
@@ -93,17 +95,17 @@ function reducer( state = initialState, action){
 
 }
 
-export function login(home) {
+export function login(username) {
   return {
     type: LOGIN,
-    payload: home
+    payload: username
   }
 }
 
-export function password(pass) {
+export function password(password) {
   return {
     type: PASSWORD,
-    payload: pass
+    payload: password
   }
 }
 

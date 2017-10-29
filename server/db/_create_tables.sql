@@ -12,7 +12,7 @@ CREATE TABLE properties(
     ,city VARCHAR(255)
     ,state VARCHAR(255)
     ,zip VARCHAR(255)
-    ,image_url VARCHAR(255)
+    ,image_url VARCHAR(1000)
     ,loan_amount NUMERIC(32,8)
     ,monthly_amount NUMERIC(32,8)
     ,desired_rent NUMERIC(32,8) NOT NULL

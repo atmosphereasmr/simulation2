@@ -17,15 +17,19 @@ class Wizard4 extends Component {
   eventHandlerLoanAmount(event) {
     this.setState({
       loan_amount: event
+    }, () => {
+      this.props.propertyLoanAmount(this.state.loan_amount)
+      console.log(this.state.loan_amount)
     })
-    this.props.propertyLoanAmount(this.state.loan_amount)
   }
 
   eventHandlerMonthlyAmount(event) {
     this.setState({
       monthly_amount: event
+    }, () => {
+      this.props.propertyMonthlyAmount(this.state.monthly_amount)
+      console.log(this.state.monthly_amount)
     })
-    this.props.propertyMonthlyAmount(this.state.monthly_amount)
   }
 
   componentDidMount() {

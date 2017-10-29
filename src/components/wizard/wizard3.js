@@ -16,8 +16,10 @@ class Wizard3 extends Component {
   eventHandlerPropertyImageURL(event) {
     this.setState({
       image_url: event
+    }, () => {
+      this.props.propertyImageURL(this.state.image_url)
+      console.log(this.state.image_url)
     })
-    this.props.propertyImageURL(this.state.image_url)
   }
 
   componentDidMount() {

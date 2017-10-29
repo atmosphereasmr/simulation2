@@ -19,29 +19,37 @@ class Wizard2 extends Component {
   eventHandlerPropertyAddress(event) {
     this.setState({
       property_address: event
+    }, () => {
+      this.props.propertyAddress(this.state.property_address)
+      console.log(this.state.property_address)
     })
-    this.props.propertyAddress(this.state.property_address)
   }
 
   eventHandlerPropertyCity(event) {
     this.setState({
       property_city: event
+    }, () => {
+      this.props.propertyCity(this.state.property_city)
+      console.log(this.state.property_city)
     })
-    this.props.propertyCity(this.state.property_city)
   }
 
   eventHandlerPropertyState(event) {
     this.setState({
       property_state: event
+    }, () => {
+      this.props.propertyState(this.state.property_state)
+      console.log(this.state.property_state)
     })
-    this.props.propertyState(this.state.property_state)
   }
 
   eventHandlerPropertyZip(event) {
     this.setState({
       property_zip: event
+    }, () => {
+      this.props.propertyZip(this.state.property_zip)
+      console.log(this.state.property_zip)
     })
-    this.props.propertyZip(this.state.property_zip)
   }
 
   componentDidMount() {

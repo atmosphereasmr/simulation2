@@ -24,6 +24,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstan
 app.post('/api/auth/login', auth_controller.login);
 app.post('/api/auth/register', auth_controller.register);
 app.post('/api/auth/logout', auth_controller.signout);
+/*Logan messing around don't mind me!*/
+app.post('/api/users', auth_controller.create);
 
 /* Property Controller*/
 app.post('/api/properties', properties_controller.create);
